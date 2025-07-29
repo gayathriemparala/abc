@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us | JB PORTALS</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="header-footer.css">
+  <style>
+    /* Reused from homepage */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    section {
+      padding: 60px 5%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      margin-bottom: 40px;
+      font-size: 32px;
+      color: #0d47a1;
+      position: relative;
+      display: inline-block;
+    }
+
+    h2::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: #42a5f5;
+      border-radius: 2px;
+    }
+
+    /* About-specific styles */
+    .about-hero {
+      background: linear-gradient(135deg, #1565c0, #42a5f5);
+      color: white;
+      padding: 80px 5%;
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .about-hero h1 {
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
+
+    .about-content {
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      margin-bottom: 40px;
+      line-height: 1.8;
+    }
+
+    .about-content p {
+      margin-bottom: 20px;
+    }
+
+    .vision-mission {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin: 40px 0;
+    }
+
+    .vision-mission div {
+      background: #f0f7ff;
+      padding: 30px;
+      border-radius: 12px;
+      border-left: 5px solid #1565c0;
+    }
+
+    /* Team Section */
+ /* Team Cards Styling */
+  .team-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+  }
+
+  .team-card {
+    display: flex;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border-left: 5px solid #1565c0;
+  }
+
+  .team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  }
+
+  .member-photo {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-right: 1px solid #eee;
+  }
+
+  .member-info {
+    padding: 20px;
+    flex: 1;
+  }
+
+  .member-info h3 {
+    color: #0d47a1;
+    margin: 0 0 5px 0;
+    font-size: 18px;
+  }
+
+  .member-info p {
+    color: #1565c0;
+    margin: 0 0 10px 0;
+    font-weight: 500;
+  }
+
+  .member-contact {
+    color: #555;
+    font-size: 14px;
+  }
+
+  .member-contact i {
+    color: #42a5f5;
+    margin-right: 8px;
+  }
+
+  @media (max-width: 768px) {
+    .team-cards-container {
+      grid-template-columns: 1fr;
+    }
+    
+    .member-photo {
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+    /* Promises Section */
+    .promises-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      margin: 40px 0;
+    }
+
+    .promise-card {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: all 0.4s ease;
+      border-top: 3px solid #42a5f5;
+      height: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .promise-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .card-icon {
+      width: 70px;
+      height: 70px;
+      margin: 0 auto 20px;
+      background: #e3f2fd;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.4s ease;
+    }
+
+    .promise-card:hover .card-icon {
+      transform: rotateY(180deg);
+      background: #1565c0;
+    }
+
+    .card-icon i {
+      font-size: 30px;
+      color: #1565c0;
+      transition: all 0.4s ease;
+    }
+
+    .promise-card:hover .card-icon i {
+      color: white;
+      transform: rotateY(180deg);
+    }
+
+    .promise-card h3 {
+      color: #0d47a1;
+      margin-bottom: 15px;
+    }
+
+    .promise-card p {
+      color: #555;
+    }
+
+    .value-list {
+      margin: 20px 0;
+      padding-left: 20px;
+    }
+    .value-list li {
+      margin-bottom: 10px;
+      list-style: none;
+      position: relative;
+      left: -20px;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      background: #f0f7ff;
+      padding: 80px 5%;
+      margin-top: 60px;
+    }
+
+    .testimonial-slider {
+      max-width: 1000px;
+      margin: 40px auto 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .testimonial-track {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .testimonial-card {
+      min-width: 100%;
+      padding: 0 15px;
+      box-sizing: border-box;
+    }
+
+    .testimonial-content {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      min-height: 250px;
+    }
+
+    .client-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 30px;
+      border: 3px solid #42a5f5;
+    }
+
+    .testimonial-text {
+      flex: 1;
+      text-align: left;
+    }
+
+    .testimonial-text p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #555;
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+
+    .client-info {
+      border-top: 1px solid #eee;
+      padding-top: 15px;
+    }
+
+    .client-info strong {
+      color: #1565c0;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .slider-controls {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .slider-prev, .slider-next {
+      background: #1565c0;
+      color: white;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      margin: 0 10px;
+      font-size: 18px;
+      transition: all 0.3s;
+    }
+
+    .slider-prev:hover, .slider-next:hover {
+      background: #0d47a1;
+    }
+
+    @media (max-width: 768px) {
+      .vision-mission {
+        grid-template-columns: 1fr;
+      }
+      
+      .promises-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .testimonial-content {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .client-photo {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Reused Header -->
+  <header>
+    <div class="logo">JB PORTALS</div>
+    
+    <div class="nav-links">
+      <a href="home.html">Home</a>
+      <a href="about.html" class="active">AboutUs</a>
+      <a href="services.html">Services</a>
+      <a href="contactus.html">ContactUs</a>
+    </div>
+    
+    <div class="socials">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+    </div>
+    
+    <div class="menu-toggle" id="menuToggle">
+      <div class="hamburger"></div>
+      <div class="hamburger"></div>
+      <div class="hamburger"></div>
+    </div>
+  </header>
+  
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="home.html"><i class="fas fa-home"></i> Home</a>
+    <a href="about.html" class="active"><i class="fas fa-info-circle"></i> AboutUs</a>
+    <a href="services.html"><i class="fas fa-cogs"></i> Services</a>
+    <a href="contactus.html"><i class="fas fa-envelope"></i> ContactUs</a>
+    
+    <div style="margin-top: 30px;">
+      <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+      <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+    </div>
+  </div>
+
+  <!-- About Hero Section -->
+  <div class="about-hero">
+    <h1>About JB PORTALS</h1>
+    <p>"Building Solutions That Drive Progress and Uplift Lives"</p>
+  </div>
+
+  <!-- About Content -->
+  <section>
+    <div class="about-content">
+      <p><strong>JB PORTALS</strong> is a visionary technology partner dedicated to crafting intelligent digital solutions that transform lives and empower communities. We bridge the gap between cutting-edge technology and human needs.</p>
+      
+      <p>As <strong>full-cycle software architects</strong>, we own projects from initial strategy to final deployment and beyond. Our process blends technical excellence with human-centered design, ensuring every solution is:</p>
+      
+      <ul class="value-list">
+        <li><i class="fas fa-check-circle" style="color: #42a5f5;"></i> <strong>Purpose-built</strong> - Tailored to solve real-world challenges</li>
+        <li><i class="fas fa-check-circle" style="color: #42a5f5;"></i> <strong>Future-ready</strong> - Scalable for evolving needs</li>
+        <li><i class="fas fa-check-circle" style="color: #42a5f5;"></i> <strong>User-delighted</strong> - Intuitive and impactful interfaces</li>
+      </ul>
+
+      <p>We serve <strong>businesses, educational institutions, and communities</strong> with the same commitment to excellence. Our "Client-First Promise" guarantees:</p>
+      
+      <div class="promises-container">
+        <!-- Timely Delivery -->
+        <div class="promise-card">
+          <div class="card-icon">
+            <i class="fas fa-clock"></i>
+          </div>
+          <h3>Timely Delivery</h3>
+          <p>Meeting deadlines without compromising quality</p>
+        </div>
+        
+        <!-- Precision Engineering -->
+        <div class="promise-card">
+          <div class="card-icon">
+            <i class="fas fa-crosshairs"></i>
+          </div>
+          <h3>Precision Engineering</h3>
+          <p>Pixel-perfect execution of your vision</p>
+        </div>
+        
+        <!-- Ongoing Support -->
+        <div class="promise-card">
+          <div class="card-icon">
+            <i class="fas fa-hands-helping"></i>
+          </div>
+          <h3>Ongoing Support</h3>
+          <p>Long-term partnership beyond deployment</p>
+        </div>
+      </div>
+
+      <p class="closing-statement">At JB PORTALS, we measure success by the <strong>positive change</strong> we create - whether it's streamlining operations for a Fortune 500 company or building an app that helps a student learn better. Technology should serve humanity, and we're here to make that happen.</p>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section>
+   <h2>OUR Team Members</h2>
+  <div class="team-cards-container">
+    <!-- Team Member 1 -->
+    <div class="team-card">
+      <img src="images/team1.jpg" alt="Team Member" class="member-photo">
+      <div class="member-info">
+        <h3>Narayana R</h3>
+        <p>Founder</p>
+             </div>
+    </div>
+
+    <!-- Team Member 2 -->
+    <div class="team-card">
+      <img src="images/team2.jpg" alt="Team Member" class="member-photo">
+      <div class="member-info">
+        <h3>Manoj M</h3>
+        <p>Developer</p>
+             </div>
+    </div>
+
+    <!-- Team Member 3 -->
+    <div class="team-card">
+      <img src="images/team3.jpg" alt="Team Member" class="member-photo">
+      <div class="member-info">
+        <h3>Gayathri E</h3>
+        <p>Developer</p>
+              </div>
+    </div>
+
+    <!-- Team Member 4 -->
+    <div class="team-card">
+      <img src="images/team4.jpg" alt="Team Member" class="member-photo">
+      <div class="member-info">
+        <h3>Akash B</h3>
+        <p>Test Engineer</p>
+              </div>
+    </div>
+     <!-- Team Member 5 -->
+    <div class="team-card">
+      <img src="images/team3.jpg" alt="Team Member" class="member-photo">
+      <div class="member-info">
+        <h3>Goutham J V</h3>
+        <p>Customer Relation Manager</p>
+              </div>
+    </div>
+     
+      <!-- Team Member 6 -->
+    <div class="team-card">
+      <img src="images/team3.jpg" alt="Team Member" class="member-photo">
+      <div class="member-info">
+        <h3>Devendra P</h3>
+        <p>Developer</p>
+              </div>
+    </div>
+    
+       <!-- Team Member 7 -->
+    <div class="team-card">
+      <img src="images/team3.jpg" alt="Team Member" class="member-photo">
+      <div class="member-info">
+        <h3>Vijay M</h3>
+        <p>Tech Support</p>
+              </div>
+    </div>
+       
+        <!-- Team Member 8 -->
+    <div class="team-card">
+      <img src="images/team3.jpg" alt="Team Member" class="member-photo">
+      <div class="member-info">
+        <h3>Suresh S</h3>
+        <p>Accounts Head</p>
+              </div>
+    </div>
+        
+         <!-- Team Member 9 -->
+    <div class="team-card">
+      <img src="images/team3.jpg" alt="Team Member" class="member-photo">
+      <div class="member-info">
+        <h3>Aishwarya</h3>
+        <p>Developer</p>
+              </div>
+    </div>
+         
+     </div>
+  </section>
+
+  <!-- Testimonials Carousel -->
+  <section class="testimonials">
+    <h2 style="text-align: center;">HEAR FROM OUR TESTIMONIALS</h2>
+    
+    <div class="testimonial-slider">
+      <div class="testimonial-track" id="testimonialTrack">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <img src="images/client1.jpg" alt="Client" class="client-photo">
+            <div class="testimonial-text">
+              <p>"JB PORTALS transformed our educational platform with their custom software. The team was professional and delivered beyond our expectations."</p>
+              <div class="client-info">
+                <strong>Rahul Sharma</strong>
+                <span>Director, ABC University</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <img src="images/client2.jpg" alt="Client" class="client-photo">
+            <div class="testimonial-text">
+              <p>"Their ERP solution streamlined our entire operation. What used to take days now happens in minutes. Truly intelligent digital solutions!"</p>
+              <div class="client-info">
+                <strong>Priya Patel</strong>
+                <span>CEO, XYZ Enterprises</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <img src="images/client3.jpg" alt="Client" class="client-photo">
+            <div class="testimonial-text">
+              <p>"The mobile app they developed for our healthcare startup has improved patient engagement by 300%. Exceptional UI/UX design!"</p>
+              <div class="client-info">
+                <strong>Dr. Amit Joshi</strong>
+                <span>Founder, HealthPlus</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 4 -->
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <img src="images/client4.jpg" alt="Client" class="client-photo">
+            <div class="testimonial-text">
+              <p>"Working with JB PORTALS has been a game-changer. Their prototype development helped us secure $2M in funding."</p>
+              <div class="client-info">
+                <strong>Neha Gupta</strong>
+                <span>CTO, InnovateTech</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slider-controls">
+        <button class="slider-prev" onclick="moveTestimonial(-1)">❮</button>
+        <button class="slider-next" onclick="moveTestimonial(1)">❯</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reused Footer -->
+  <footer>
+    <div class="footer-content">
+      <div>
+        <h4>Get in Touch</h4>
+        <p><i class="fas fa-envelope"></i> Email: contact@jbportals.com</p>
+        <p><i class="fas fa-phone"></i> Phone: +91 12345 67890</p>
+        <p><i class="fas fa-map-marker-alt"></i> Address: Your Company Address</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <p><a href="home.html"><i class="fas fa-chevron-right"></i> Home</a></p>
+        <p><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></p>
+        <p><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></p>
+        <p><a href="contactus.html"><i class="fas fa-chevron-right"></i> Contact</a></p>
+      </div>
+      <div>
+        <h4>Connect With Us</h4>
+        <div style="display: flex; gap: 15px; font-size: 20px;">
+          <a href="#" style="color: white;"><i class="fab fa-instagram"></i></a>
+          <a href="#" style="color: white;"><i class="fab fa-linkedin"></i></a>
+          <a href="#" style="color: white;"><i class="fab fa-facebook"></i></a>
+          <a href="#" style="color: white;"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      © 2025 JBPORTALS. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    // Hamburger Menu Functionality
+    var menuToggle = document.getElementById('menuToggle');
+    var mobileMenu = document.getElementById('mobileMenu');
+    
+    if (menuToggle && mobileMenu) {
+      // Toggle menu on button click
+      menuToggle.addEventListener('click', function() {
+        this.classList.toggle('active');
+        mobileMenu.classList.toggle('open');
+        document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+      });
+      
+      // Close menu when clicking outside
+      document.addEventListener('click', function(e) {
+        if (!menuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+          menuToggle.classList.remove('active');
+          mobileMenu.classList.remove('open');
+          document.body.style.overflow = '';
+        }
+      });
+
+      // Close menu when any mobile menu link is clicked
+      var mobileLinks = document.querySelectorAll('#mobileMenu a');
+      for (var i = 0; i < mobileLinks.length; i++) {
+        mobileLinks[i].addEventListener('click', function() {
+          menuToggle.classList.remove('active');
+          mobileMenu.classList.remove('open');
+          document.body.style.overflow = '';
+        });
+      }
+    }
+
+    // Testimonial Carousel Functionality
+    var currentTestimonial = 0;
+    var track = document.getElementById('testimonialTrack');
+    var testimonials = document.querySelectorAll('.testimonial-card');
+    var totalTestimonials = testimonials.length;
+
+    function moveTestimonial(direction) {
+      currentTestimonial = (currentTestimonial + direction + totalTestimonials) % totalTestimonials;
+      track.style.transform = 'translateX(-' + (currentTestimonial * 100) + '%)';
+    }
+
+    // Auto-rotate testimonials every 5 seconds
+    setInterval(function() {
+      moveTestimonial(1);
+    }, 5000);
+  </script>
+</body>
+</html>
